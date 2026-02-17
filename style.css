@@ -237,3 +237,25 @@ button:hover {
     border: 1px solid #444;
     color: #aaa;
 }
+
+.center-page{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.auth-card{
+    background:#0a0a0f;
+    padding:40px;
+    border-radius:20px;
+    border:2px solid var(--primary);
+    width:350px;
+    text-align:center;
+}
+
+.link{
+    margin-top:20px;
+    color:var(--primary);
+    cursor:pointer;
+}

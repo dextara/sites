@@ -9,6 +9,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@300;400;600&display=swap"
         rel="stylesheet">
+    <link rel="icon" href="divi selqni.png" type="image/png">
 </head>
 
 <body>
@@ -20,7 +21,7 @@
             <div class="nav-link" onclick="openModal('shop')">🛒 КУПИ</div>
             <div class="nav-link" onclick="openModal('rules')">📜 ПРАВИЛА</div>
             <div class="nav-link" onclick="openModal('links')">🔗 ВРЪЗКИ</div>
-            <div class="nav-link" onclick="openAuth()">👤 ПРОФИЛ</div>
+            <div class="nav-link" onclick="goToProfile()">👤 ПРОФИЛ</div>
         </div>
     </header>
 
@@ -47,7 +48,11 @@
     <!-- Firebase -->
     <script type="module" src="firebase.js"></script>
     <script src="script.js"></script>
-
+    <script>
+        function goToProfile() {
+            window.location.href = "profile.html";
+        }
+    </script>
 </body>
 
 </html>

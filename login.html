@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Divi Selqni</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="center-page">
+
+    <div class="auth-card">
+        <h2>LOGIN / REGISTER</h2>
+
+        <input id="email" placeholder="Email">
+        <input id="password" type="password" placeholder="Password">
+        <input id="username" placeholder="Username (register only)">
+
+        <button onclick="register()">Register</button>
+        <button onclick="login()">Login</button>
+
+        <p onclick="goHome()" class="link">⬅ Back to Home</p>
+    </div>
+
+    <script type="module" src="firebase.js"></script>
+    <script src="auth.js"></script>
+
+</body>
+
+</html>
