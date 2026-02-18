@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile | Divi Selqni</title>
+    <title>Dashboard | Divi Selqni</title>
     <link rel="stylesheet" href="style.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@300;400;600&display=swap"
@@ -19,15 +19,22 @@
     <header>
         <div class="nav-container">
             <div class="nav-link" onclick="window.location.href='index.html'">🏠 HOME</div>
-            <div class="nav-link" onclick="window.location.href='profile.html'">👤 PROFILE</div>
+            <div class="nav-link" onclick="window.location.href='dashboard.html'">📊 DASHBOARD</div>
             <div class="nav-link" onclick="openModal('shop')">🛒 SHOP</div>
-            <div class="nav-link" id="logoutNav">🚪 LOGOUT</div>
+            <div class="nav-link dropdown">
+                <span>👤 ACCOUNT</span>
+                <div class="dropdown-content">
+                    <a onclick="window.location.href='profile.html'">Profile</a>
+                    <a onclick="openModal('settings')">Settings</a>
+                    <a id="logoutNav">Logout</a>
+                </div>
+            </div>
         </div>
     </header>
 
     <div class="center-page">
-        <div id="profile-container">
-            <!-- Profile cards will be inserted here by JS -->
+        <div id="dashboard-container">
+            <!-- Dashboard content will be inserted here by JS -->
         </div>
     </div>
 
@@ -43,7 +50,7 @@
     </footer>
 
     <!-- Firebase -->
-    <script type="module" src="profile.js"></script>
+    <script type="module" src="dashboard.js"></script>
     <script src="script.js"></script>
 
 </body>

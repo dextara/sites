@@ -21,7 +21,7 @@
             <div class="nav-link" onclick="openModal('shop')">🛒 КУПИ</div>
             <div class="nav-link" onclick="openModal('rules')">📜 ПРАВИЛА</div>
             <div class="nav-link" onclick="openModal('links')">🔗 ВРЪЗКИ</div>
-            <div class="nav-link" onclick="window.location.href='login.html'">REGISTER</div>
+            <div class="nav-link" id="auth-button" onclick="handleAuthClick()">REGISTER</div>
         </div>
     </header>
 
@@ -48,12 +48,6 @@
     <!-- Firebase -->
     <script type="module" src="firebase.js"></script>
     <script src="script.js"></script>
-    <script>
-        function goToProfile() {
-            window.location.href = "profile.html";
-        }
-    </script>
-    <script src="auth.js"></script>
 </body>
 
 </html>

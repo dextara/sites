@@ -53,7 +53,52 @@ animate();
 
 // ===== MODALS =====
 const modalData = {
-    shop: `<h2>МАГАЗИН</h2><p>Soon...</p>`,
+    shop: `
+        <h2>🛒 МАГАЗИН</h2>
+        <div id="products">
+            <div class="product-card">
+                <h3>VIP Status</h3>
+                <p>Специален статус в Discord</p>
+                <p class="price">10 лв</p>
+                <button onclick="addToCart('VIP Status', 10)">Добави в количка</button>
+            </div>
+            <div class="product-card">
+                <h3>Custom Role</h3>
+                <p>Персонализирана роля</p>
+                <p class="price">5 лв</p>
+                <button onclick="addToCart('Custom Role', 5)">Добави в количка</button>
+            </div>
+            <div class="product-card">
+                <h3>Boost</h3>
+                <p>Boost за сървъра</p>
+                <p class="price">15 лв</p>
+                <button onclick="addToCart('Boost', 15)">Добави в количка</button>
+            </div>
+        </div>
+        <button onclick="viewCart()">Виж количка</button>
+    `,
+    cart: `
+        <h2>🛒 Количка</h2>
+        <div id="cart-items"></div>
+        <p id="total">Общо: 0 лв</p>
+        <button onclick="checkout()">Checkout</button>
+        <button onclick="openModal('shop')">Назад към магазин</button>
+    `,
+    checkout: `
+        <h2>💳 Checkout</h2>
+        <form id="checkout-form">
+            <input type="text" placeholder="Име" required>
+            <input type="email" placeholder="Email" required>
+            <input type="text" placeholder="Адрес" required>
+            <button type="submit">Плати</button>
+        </form>
+    `,
+    settings: `
+        <h2>⚙️ Настройки</h2>
+        <p>Тема: <select><option>Тъмна</option><option>Светла</option></select></p>
+        <p>Език: <select><option>Български</option><option>English</option></select></p>
+        <button>Запази</button>
+    `,
     rules: `<h2>ПРАВИЛА</h2><p>Soon...</p>`,
     links: `<h2>ВРЪЗКИ</h2><p>Soon...</p>`
 };
@@ -65,6 +110,65 @@ function openModal(type) {
 
 function closeModal() {
     document.getElementById('modal-overlay').style.display = 'none';
+}
+
+// ===== CART FUNCTIONS =====
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+function addToCart(name, price) {
+    cart.push({ name, price });
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(`${name} добавен в количката!`);
+}
+
+function viewCart() {
+    openModal('cart');
+    updateCartDisplay();
+}
+
+function updateCartDisplay() {
+    const cartItems = document.getElementById('cart-items');
+    const total = document.getElementById('total');
+    cartItems.innerHTML = cart.map(item => `<p>${item.name} - ${item.price} лв</p>`).join('');
+    const totalPrice = cart.reduce((sum, item) => sum + item.price, 0);
+    total.textContent = `Общо: ${totalPrice} лв`;
+}
+
+function checkout() {
+    if (cart.length === 0) {
+        alert('Количката е празна!');
+        return;
+    }
+    openModal('checkout');
+    document.getElementById('checkout-form').addEventListener('submit', handleCheckout);
+}
+
+async function handleCheckout(e) {
+    e.preventDefault();
+    const form = e.target;
+    const name = form[0].value;
+    const email = form[1].value;
+    const address = form[2].value;
+
+    // Simulate payment
+    alert('Плащането е успешно!');
+
+    // Save order to Firestore if logged in
+    if (currentUser) {
+        const order = {
+            userId: currentUser.uid,
+            items: cart,
+            total: cart.reduce((sum, item) => sum + item.price, 0),
+            name, email, address,
+            date: new Date()
+        };
+        await window.addDoc(window.collection(window.db, 'orders'), order);
+    }
+
+    cart = [];
+    localStorage.setItem('cart', JSON.stringify(cart));
+    closeModal();
+    alert('Поръчката е завършена!');
 }
 
 

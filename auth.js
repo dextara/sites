@@ -13,7 +13,7 @@ async function register() {
             createdAt: new Date()
         });
 
-        window.location.href = "profile.html";
+        window.location.href = "dashboard.html";
     } catch (error) {
         alert(error.message);
     }
@@ -25,7 +25,7 @@ async function login() {
 
     try {
         await window.signInWithEmailAndPassword(window.auth, email, password);
-        window.location.href = "profile.html";
+        window.location.href = "dashboard.html";
     } catch (error) {
         alert(error.message);
     }
