@@ -24,7 +24,7 @@ window.register = async () => {
     });
 
 
-    window.location.href = "dashboard.html";
+    window.location.href = "index.html";
 };
 
 window.login = async () => {
@@ -32,7 +32,7 @@ window.login = async () => {
     const password = document.getElementById("password").value;
 
     await signInWithEmailAndPassword(auth, email, password);
-    window.location.href = "dashboard.html";
+    window.location.href = "index.html";
 };
 
 window.goHome = () => {

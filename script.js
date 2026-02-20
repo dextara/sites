@@ -177,13 +177,24 @@ let currentUser = null;
 // Проверка дали има логнат потребител
 window.onAuthStateChanged(window.auth, async (user) => {
     const authBtn = document.getElementById("auth-button");
+    const userInfo = document.getElementById("user-info");
 
     if (user) {
         currentUser = user;
-        authBtn.innerText = "PROFILE";
+        if (authBtn) authBtn.innerText = "PROFILE";
+        if (userInfo) {
+            // Get user data
+            const docRef = window.doc(window.db, "users", user.uid);
+            const docSnap = await window.getDoc(docRef);
+            if (docSnap.exists()) {
+                const data = docSnap.data();
+                userInfo.innerHTML = `${data.username} (${data.role}) <button onclick="logout()">Logout</button>`;
+            }
+        }
     } else {
         currentUser = null;
-        authBtn.innerText = "REGISTER";
+        if (authBtn) authBtn.innerText = "REGISTER";
+        if (userInfo) userInfo.innerHTML = "";
     }
 });
 

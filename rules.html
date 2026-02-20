@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | Divi Selqni</title>
+    <title>Rules | Divi Selqni</title>
     <link rel="stylesheet" href="style.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@300;400;600&display=swap"
@@ -22,20 +22,17 @@
             <div class="nav-link" onclick="window.location.href='shop.html'">🛒 SHOP</div>
             <div class="nav-link" onclick="window.location.href='rules.html'">📜 RULES</div>
             <div class="nav-link" onclick="window.location.href='links.html'">🔗 LINKS</div>
-            <div class="nav-link" id="user-info"></div>
+            <div class="nav-link" id="auth-button" onclick="handleAuthClick()">REGISTER</div>
         </div>
     </header>
 
     <div class="center-page">
-        <div id="dashboard-container">
-            <!-- Dashboard content will be inserted here by JS -->
-        </div>
-    </div>
-
-    <div id="modal-overlay" class="overlay">
-        <div class="modal-content">
-            <div id="modal-body"></div>
-            <button onclick="closeModal()" class="close-btn">Затвори</button>
+        <div class="content-card">
+            <h1>📜 ПРАВИЛА</h1>
+            <p>1. Бъди уважителен към всички членове.</p>
+            <p>2. Не спамвай в чатовете.</p>
+            <p>3. Използвай подходящ език.</p>
+            <p>4. Следвай указанията на модераторите.</p>
         </div>
     </div>
 
@@ -44,7 +41,7 @@
     </footer>
 
     <!-- Firebase -->
-    <script type="module" src="dashboard.js"></script>
+    <script type="module" src="firebase.js"></script>
     <script src="script.js"></script>
 
 </body>

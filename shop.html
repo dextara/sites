@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | Divi Selqni</title>
+    <title>Shop | Divi Selqni</title>
     <link rel="stylesheet" href="style.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@300;400;600&display=swap"
@@ -22,13 +22,34 @@
             <div class="nav-link" onclick="window.location.href='shop.html'">🛒 SHOP</div>
             <div class="nav-link" onclick="window.location.href='rules.html'">📜 RULES</div>
             <div class="nav-link" onclick="window.location.href='links.html'">🔗 LINKS</div>
-            <div class="nav-link" id="user-info"></div>
+            <div class="nav-link" id="auth-button" onclick="handleAuthClick()">REGISTER</div>
         </div>
     </header>
 
     <div class="center-page">
-        <div id="dashboard-container">
-            <!-- Dashboard content will be inserted here by JS -->
+        <div id="shop-container">
+            <h1>🛒 МАГАЗИН</h1>
+            <div id="products">
+                <div class="product-card">
+                    <h3>VIP Status</h3>
+                    <p>Специален статус в Discord</p>
+                    <p class="price">10 лв</p>
+                    <button onclick="addToCart('VIP Status', 10)">Добави в количка</button>
+                </div>
+                <div class="product-card">
+                    <h3>Custom Role</h3>
+                    <p>Персонализирана роля</p>
+                    <p class="price">5 лв</p>
+                    <button onclick="addToCart('Custom Role', 5)">Добави в количка</button>
+                </div>
+                <div class="product-card">
+                    <h3>Boost</h3>
+                    <p>Boost за сървъра</p>
+                    <p class="price">15 лв</p>
+                    <button onclick="addToCart('Boost', 15)">Добави в количка</button>
+                </div>
+            </div>
+            <button onclick="viewCart()">Виж количка</button>
         </div>
     </div>
 
@@ -44,7 +65,7 @@
     </footer>
 
     <!-- Firebase -->
-    <script type="module" src="dashboard.js"></script>
+    <script type="module" src="firebase.js"></script>
     <script src="script.js"></script>
 
 </body>

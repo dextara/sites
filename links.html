@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | Divi Selqni</title>
+    <title>Links | Divi Selqni</title>
     <link rel="stylesheet" href="style.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@300;400;600&display=swap"
@@ -22,20 +22,16 @@
             <div class="nav-link" onclick="window.location.href='shop.html'">🛒 SHOP</div>
             <div class="nav-link" onclick="window.location.href='rules.html'">📜 RULES</div>
             <div class="nav-link" onclick="window.location.href='links.html'">🔗 LINKS</div>
-            <div class="nav-link" id="user-info"></div>
+            <div class="nav-link" id="auth-button" onclick="handleAuthClick()">REGISTER</div>
         </div>
     </header>
 
     <div class="center-page">
-        <div id="dashboard-container">
-            <!-- Dashboard content will be inserted here by JS -->
-        </div>
-    </div>
-
-    <div id="modal-overlay" class="overlay">
-        <div class="modal-content">
-            <div id="modal-body"></div>
-            <button onclick="closeModal()" class="close-btn">Затвори</button>
+        <div class="content-card">
+            <h1>🔗 ВРЪЗКИ</h1>
+            <p><a href="https://discord.gg/tzsCX674x4" target="_blank">Discord Server</a></p>
+            <p><a href="https://github.com/dextara/Divi-Selqni" target="_blank">GitHub Repository</a></p>
+            <p><a href="mailto:contact@diviselqni.com">Contact Email</a></p>
         </div>
     </div>
 
@@ -44,7 +40,7 @@
     </footer>
 
     <!-- Firebase -->
-    <script type="module" src="dashboard.js"></script>
+    <script type="module" src="firebase.js"></script>
     <script src="script.js"></script>
 
 </body>
