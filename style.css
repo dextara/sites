@@ -188,6 +188,7 @@ header {
     z-index: 100;
     letter-spacing: 1px;
     text-transform: uppercase;
+    pointer-events: none;
 }
 
 @keyframes fadeIn {
@@ -396,7 +397,7 @@ button:hover {
     position: relative;
     z-index: 10;
     min-height: 100vh;
-    padding: 120px 20px 40px 20px;
+    padding: 120px 20px 80px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
