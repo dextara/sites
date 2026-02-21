@@ -460,7 +460,7 @@ button:hover {
     border-radius: 10px;
     font-weight: bold;
     transition: 0.3s ease;
-    color: white;
+    color: rgb(22, 22, 22);
 }
 
 /* Discord */
