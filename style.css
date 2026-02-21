@@ -394,20 +394,18 @@ button:hover {
 }
 
 .buy-btn {
-    background: linear-gradient(45deg, var(--primary), #4752c4);
     display: inline-block;
     margin-top: 10px;
     padding: 12px 22px;
-    background-color: #635BFF;
+    background: linear-gradient(45deg, var(--primary), #4752c4);
     color: white;
     text-decoration: none;
     border-radius: 8px;
     font-weight: bold;
-    transition: 0.5s;
-    box-shadow: 0 0 25px rgba(88, 101, 242, 0.5);
-    border: none;
-    cursor: pointer;
     text-transform: uppercase;
+    transition: 0.3s;
+    box-shadow: 0 0 25px rgba(88, 101, 242, 0.5);
+    cursor: pointer;
 }
 
 .buy-btn:hover {
