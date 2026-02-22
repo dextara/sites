@@ -17,21 +17,13 @@
     <canvas id="canvas-stars"></canvas>
 
     <header>
-    <div class="nav-container">
-
-        <div class="menu-toggle" onclick="toggleMenu()">
-            ☰
-        </div>
-
-        <div class="nav-links" id="navLinks">
+         <div class="nav-container">
             <div class="nav-link" onclick="window.location.href='index.html'">🏠 HOME</div>
             <div class="nav-link" onclick="window.location.href='shop.html'">🛒 SHOP</div>
             <div class="nav-link" onclick="window.location.href='rules.html'">📜 RULES</div>
             <div class="nav-link" onclick="window.location.href='links.html'">🔗 LINKS</div>
-            <div class="nav-link" onclick="handleAuthClick()">👤 ACCOUNT</div>
+            <div class="nav-link" id="auth-button" onclick="handleAuthClick()">👤 Account</div>
         </div>
-
-    </div>
     </header>
 
     <main class="hero">
