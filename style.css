@@ -26,7 +26,17 @@ html {
     z-index: 0;
 }
 
-/* Навигация */
+/* Навигация (Горе) */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(15px);
+    border-bottom: 2px solid rgba(88, 101, 242, 0.2);
+}
+
 .nav-container {
     display: flex;
     align-items: center;
@@ -35,17 +45,19 @@ html {
     padding: 15px;
 }
 
-.nav-menu {
+.nav-center {
     display: flex;
     gap: 30px;
 }
 
-.hamburger {
-    display: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: white;
-    margin-right: 20px;
+#auth-button {
+    position: absolute;
+    right: 20px;
+}
+
+#user-info {
+    position: absolute;
+    right: 20px;
 }
 
 .nav-link {
@@ -415,7 +427,7 @@ button:hover {
     margin-bottom: 40px;
 }
 
-#shop-container>.product-card {
+#shop-container > .product-card {
     max-width: 400px;
     width: 100%;
     margin-bottom: 20px;
@@ -447,10 +459,8 @@ body {
     margin: 0;
     min-height: 100vh;
     display: flex;
-    justify-content: center;
-    /* хоризонтално */
-    align-items: center;
-    /* вертикално */
+    justify-content: center; /* хоризонтално */
+    align-items: center;     /* вертикално */
 }
 
 .content-card {
@@ -500,115 +510,5 @@ body {
 
 .content-card a:hover {
     transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Responsive Design за мобилни устройства */
-@media (max-width: 768px) {
-    .hamburger {
-        display: block;
-    }
-
-    .nav-menu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.9);
-        backdrop-filter: blur(15px);
-        flex-direction: column;
-        gap: 10px;
-        padding: 10px 0;
-        border-bottom: 2px solid rgba(88, 101, 242, 0.2);
-    }
-
-    .nav-menu.show {
-        display: flex;
-    }
-
-    .nav-link {
-        margin: 5px 0;
-        font-size: 0.8rem;
-        text-align: center;
-    }
-
-    #auth-button,
-    #user-info {
-        position: static;
-        margin: 5px 0;
-    }
-
-    .logo-text {
-        font-size: 3rem;
-        letter-spacing: 2px;
-    }
-
-    .subtitle {
-        font-size: 0.9rem;
-        margin-bottom: 20px;
-    }
-
-    .discord-btn {
-        padding: 15px 40px;
-        font-size: 1.2rem;
-    }
-
-    .modal-content {
-        padding: 20px;
-        width: 95%;
-    }
-
-    .auth-card {
-        width: 90%;
-        padding: 20px;
-    }
-
-    .profile-card {
-        padding: 20px;
-    }
-
-    .product-card {
-        padding: 10px;
-    }
-
-    .content-card {
-        padding: 20px;
-    }
-
-    .content-card h1 {
-        font-size: 1.5rem;
-    }
-
-    #shop-container {
-        padding: 100px 10px 60px 10px;
-    }
-
-    #shop-container h1 {
-        font-size: 2rem;
-    }
-
-    .dashboard-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-
-    .dashboard-card {
-        padding: 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    .logo-text {
-        font-size: 2.5rem;
-    }
-
-    .discord-btn {
-        padding: 12px 30px;
-        font-size: 1rem;
-    }
-
-    .nav-link {
-        font-size: 0.7rem;
-    }
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
