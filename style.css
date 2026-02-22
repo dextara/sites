@@ -40,11 +40,19 @@ header {
 .nav-container {
     display: flex;
     align-items: center;
+    justify-content: center;
+    position: relative;
     padding: 15px;
 }
 
+.nav-center {
+    display: flex;
+    gap: 30px;
+}
+
 #auth-button {
-    margin-left: auto;
+    position: absolute;
+    right: 20px;
 }
 
 .nav-link {
