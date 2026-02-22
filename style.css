@@ -512,3 +512,37 @@ body {
     transform: scale(1.05);
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
+
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+    .nav-container {
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: #111;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
