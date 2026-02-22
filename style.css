@@ -40,9 +40,13 @@ header {
 .nav-container {
     display: flex;
     align-items: center;
-    justify-content: center;
-    position: relative;
-    padding: 15px;
+    justify-content: space-between;  /* по-добро решение */
+    padding: 15px 40px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
 }
 
 .nav-center {
@@ -52,7 +56,6 @@ header {
 
 #auth-button {
     position: absolute;
-    right: 20px;
 }
 
 #user-info {
@@ -521,11 +524,6 @@ body {
 
 @media (max-width: 768px) {
 
-    .nav-container {
-        justify-content: space-between;
-        position: relative;
-    }
-
     .nav-links {
         display: none;
         flex-direction: column;
@@ -535,7 +533,6 @@ body {
         background: #111;
         padding: 15px;
         border-radius: 10px;
-        box-shadow: 0 0 20px rgba(0,0,0,0.5);
     }
 
     .nav-links.active {
